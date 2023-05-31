@@ -1,0 +1,32 @@
+<script>
+
+var target = document.querySelector("#myinput");
+
+var box = document.querySelector("#box"); var box1 = document.querySelector("#box1");
+
+console.clear();
+
+target.addEventListener('copy', function() { target.style.backgroundColor = "lightgreen";
+
+console.log("You copied text");
+
+});
+
+target.addEventListener('cut', function() { 
+9console.clear(); 
+console.log("You cut text"); target.style.backgroundColor = "pink";
+
+});
+
+target.addEventListener('paste', function() {
+
+console.clear();
+
+console.log("You paste text");
+
+target.style.backgroundColor = "lightblue";
+
+});
+
+box.addEventListener('copy', function () {
+</script >
