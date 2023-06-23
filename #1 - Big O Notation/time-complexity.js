@@ -1,49 +1,57 @@
-// Space Complexity
-
-// O(1) Space Complexity
+// Slow Example
 const funnyNumber = (array) => {
-  let sum = 0;
-
+  // 4 Operations
   for (let i = 0; i < array.length; i++) {
-    sum += array[i];
+    if (i === 3) return array[i];
   }
-
-  return sum;
 };
 
-let score = [420, 96, 12, 69, 77];
-
-// console.log(funnyNumber(score));
-
-// O(n) Space Complexity
-const funnyNumberArray = (n) => {
-  const array = [];
-  for (let i = 0; i < n; i++) {
-    array.push(i * 69);
-  }
-  return array;
+// Fast Example
+const funnyNumber2 = (array) => {
+  // 1 Operation
+  return array[3];
 };
 
-// console.log(funnyNumberArray(5));
+const nums = [420, 96, 12, 69, 77];
 
-// Primitive Types ->
-// Boolean, num, undefined, null => Constant
-// String, arrays, objects => dynamic
+// console.time("funnyNumber");
+// console.log(funnyNumber(nums));
+// console.timeEnd("funnyNumber");
 
-// O(n^2) Space Complexity
-function createMatrix(n) {
-  let matrix = [];
-  for (let i = 0; i < n; i++) {
-    matrix[i] = [];
-    for (let j = 0; j < n; j++) {
-      matrix[i][j] = i + j;
-    }
-  }
-  return matrix;
+// Types of Time Complexities 👇
+
+// O(1) Time Complexity
+function someOperations(n) {
+  // 3 Operations => O(1)
+  return (n * (n + 5)) / 2;
 }
 
-[[1, 2, 3], [], []];
+// console.log(someOperations(1000));
 
-// example usage
-const matrix = createMatrix(10);
-console.log(matrix);
+// O(n) Time Complexity
+function GoingUpDown(n) {
+  // 2n + 3 Operations => O(n)
+  console.log("Going forward!");
+  for (var i = 0; i < n; i++) {
+    console.log(i);
+  }
+  console.log("At the End, Going back");
+  for (var j = n - 1; j >= 0; j--) {
+    console.log(j);
+  }
+  console.log("At the start!");
+}
+
+// console.log(GoingUpDown(3));
+
+// O(n^2) Time Complexity
+function printBoth(n) {
+  // n^2 Operations => O(n^2)
+  for (var i = 0; i < n; i++) {
+    for (var j = 0; j < n; j++) {
+      console.log(i, j);
+    }
+  }
+}
+
+console.log(printBoth(4));
